@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "student_list.h"
+
+// create the node
+student *createNode(void)
+{
+	student *newNode;
+	
+	if ((newNode = malloc(sizeof(student)) != NULL)
+	{
+		newNode.next -> NULL;
+	}
+	
+	return newNode;
+}
+
+// main function
+int main()
+{
+	student *head = NULL;
+	student *node = NULL;
+	char choice;
+	int pos;
+
+	printf("The First node:\n");
+	getData(head);
+
+	printf("i - insert node\nd - delete node\ns - show node\nq - quit\nEnter Your Choice: ");
+	scanf("%c", &choice);
+
+	while(choice != 'q')
+	{
+		switch(choice)
+		{
+			case 'i':
+				node = createNode();
+				getData(node);
+				printf("Insert node at what position: ");
+				scanf("%d", &pos);
+				insertNode(head, node, pos);
+				break;
+			case 'd':
+				printf("Delete node at what position: ");
+				scanf("%d", &pos);
+				student *deleteNode (head, pos);
+				break;
+			case 's':
+				showList(head);
+				break;
+			default:
+				break;
+		}
+
+		printf("i - insert node\nd - delete node\ns - show node\nq - quit\n
+			Enter Your Choice: ");
+		scanf("%c", &choice);
+	}
+	deleteList(head);
+
+	return 0;
+}
+
+// gather the data for the node
+void getData (student *newNode)
+{
+	student dataNode;
+	
+	dataNode = createNode;
+
+	printf("Enter the name: ");
+	scanf("%s", dataNode.name);
+	printf("Enter gender(m : male, f: female:");
+	scanf(" %c", &dataNode.gender);
+	printf("Enter the age: ");
+	scanf("%d", &dataNode.age);
+	printf("Enter the branch: ");
+	scanf("%s", dataNode.branch);
+	datanode.next -> NULL;
+
+	newNode = &dataNode;	
+}
